@@ -1,3 +1,21 @@
+//Ngambil data dari API
+function prayerTimes(latitude, longitude) {
+  fetch(
+    "http://api.aladhan.com/v1/calendar?latitude=" +
+      latitude +
+      "&longitude=" +
+      longitude +
+      "&method=2"
+  )
+    .then((response) => response.json())
+    .then(function (response) {
+      // pengambilan data hari ini
+      let date = new Date();
+      let today = date.getDate() - 1;
+      console.log(response.data[today]);
+    });
+}
+
 // perintah aktifin cek lokasi
 function userLocation() {
   if (!navigator.geolocation) {
@@ -14,7 +32,7 @@ function error() {
 
 //lokasi berhasil di akses
 function success(position) {
-  console.log(position);
+  prayerTimes(position.coords.latitude, position.coords.longitude);
 }
 
 //halaman index
