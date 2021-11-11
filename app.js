@@ -5,7 +5,7 @@ function prayerTimes(latitude, longitude) {
       latitude +
       "&longitude=" +
       longitude +
-      "&method=2"
+      "&method=4"
   )
     .then((response) => response.json())
     .then(function (response) {
