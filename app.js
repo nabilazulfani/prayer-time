@@ -46,7 +46,8 @@ function userLocation() {
 
 //lokasi gagal di akses
 function error() {
-  alert("Akes lokasi di tolak !");
+  // Default waktu sholat Jakarta
+  prayerTimes("-6.200000", 106.816666);
 }
 
 //lokasi berhasil di akses
